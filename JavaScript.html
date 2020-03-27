@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben JS Challenge</title>
+</head>
+
+<body>
+    <h1 id="name"></h1>
+    <div id="courses">
+        <p>
+            <h2>Total Courses: <span id="total"></span></h2>
+        </p>
+        <p>
+            <h2>My courses (<span id="type"></span>) are:</h2>
+        </p>
+    </div>
+
+
+    <script>
+        const name = "Benjamin Ogbolu";
+        const courses = ['HTML', 'CSS', 'Javascript']
+
+        const displayName = document.getElementById("name");
+        const courseContainer = document.getElementById("courses");
+        const allCourses = document.getElementById("total");
+        const courseType = document.getElementById("type");
+        displayName.innerHTML = name;
+        allCourses.innerHTML = courses.length;
+        let totalCourse = courses.length;
+        let type = "";
+        if (totalCourse % 2 == 0) {
+            type = "Even"
+        } else {
+            type = "Odd"
+        }
+        courseType.innerHTML = type;
+
+        courses.map((course) => {
+            courseContainer.innerHTML +=
+                `<ul>
+                    <li>${course}</li>
+                </ul>`;
+        });
+
+        for (let i in courses) {
+            let totalCourse = courses.length;
+            let type = "";
+            if (totalCourse % 2 == 0) {
+                type = "Even"
+            } else {
+                type = "Odd"
+            }
+            console.log(courses[i]);
+        }
+    </script>
+</body>
+
+</html>
